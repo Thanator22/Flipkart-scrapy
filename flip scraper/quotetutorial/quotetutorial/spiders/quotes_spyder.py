@@ -1,4 +1,5 @@
 import scrapy
+import pickle
 from ..items import laptops
 
 class Flipspyder(scrapy.Spider):
@@ -27,6 +28,8 @@ class Flipspyder(scrapy.Spider):
             items['rating'] = rating
             yield items
             Flipspyder.i +=1
+            with open('lappy_pickle.pkl', 'wb') as pickle_file:
+                pickle.dump(Flipspyder, pickle_file)
 
      nextp='https://www.flipkart.com/laptops/pr?sid=6bo%2Cb5g&marketplace=FLIPKART&page='+str(Flipspyder.page)
      if Flipspyder.i <= Flipspyder.n:
