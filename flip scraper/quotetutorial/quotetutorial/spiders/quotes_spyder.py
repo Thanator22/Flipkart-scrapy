@@ -25,8 +25,8 @@ class Flipspyder(scrapy.Spider):
         items['rating'] = rating
         yield items
 
-    nextp='https://www.flipkart.com/laptops/pr?sid=6bo%2Cb5g&marketplace=FLIPKART&page=' +atr(Flipspyder.page)
+    nextp='https://www.flipkart.com/laptops/pr?sid=6bo%2Cb5g&marketplace=FLIPKART&page=' +str(Flipspyder.page)
 
     if Flipspyder.i <= Flipspyder.n:
-        Flipspyder.page+=1
-        yield response.follow(nextp,callback=self.parse)
+        Flipspyder.page +=1
+        yield response.follow(nextp, callback = self.parse)
