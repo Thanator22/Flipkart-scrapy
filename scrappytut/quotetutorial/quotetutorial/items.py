@@ -8,10 +8,10 @@
 import scrapy
 
 
-class QuotetutorialItem(scrapy.Item):
+class laptops(scrapy.Item):
     # define the fields for your item here like:
     title = scrapy.Field()
-    author = scrapy.Field()
-    tags = scrapy.Field()
+    price = scrapy.Field()
+    rating = scrapy.Field()
 
 
