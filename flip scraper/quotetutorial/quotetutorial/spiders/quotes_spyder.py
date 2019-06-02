@@ -3,9 +3,9 @@ from ..items import laptops
 
 class Flipspyder(scrapy.Spider):
  name = 'Flipcraw'
- page =2
- n= int(input())
+ page=2
  i=1
+ n= int(input())
  start_urls = [
      'https://www.flipkart.com/laptops/pr?sid=6bo%2Cb5g&marketplace=FLIPKART&page=2'
  ]
@@ -28,8 +28,7 @@ class Flipspyder(scrapy.Spider):
             yield items
             Flipspyder.i +=1
 
-    nextp='https://www.flipkart.com/laptops/pr?sid=6bo%2Cb5g&marketplace=FLIPKART&page=' +str(Flipspyder.page)
-
-    if Flipspyder.i <= Flipspyder.n:
+     nextp='https://www.flipkart.com/laptops/pr?sid=6bo%2Cb5g&marketplace=FLIPKART&page='+str(Flipspyder.page)
+     if Flipspyder.i <= Flipspyder.n:
         Flipspyder.page +=1
         yield response.follow(nextp, callback = self.parse)
